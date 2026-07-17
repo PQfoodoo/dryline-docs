@@ -4,11 +4,25 @@ title: DryLine
 
 # DryLine
 
-**Rain radar and route rain forecasts for motorcycle riders.**
+**Rain radar, route rain forecasts and rain-aware navigation for motorcycle
+riders.**
 
-DryLine overlays weather radar on a map, colours your imported GPX route by the
-rain expected *at the time you'd actually be there*, and — in ride mode — warns
-you roughly 10–30 minutes before rain reaches you.
+DryLine helps you find the dry line:
+
+- **Live rain radar** on the map (MET Norway, updated every ~5 minutes).
+- **Route rain forecast** — import a GPX route and it is coloured by the rain
+  expected *at the time you'd actually be there*, not the weather right now.
+- **Ride mode** — time-based warnings roughly 10–30 minutes before rain
+  reaches you.
+- **Navigation** — turn-by-turn guidance along your own GPX track (no
+  rerouting: your planned route is the route), with voice instructions
+  (English) and the radar + rain-coloured route on the navigation map.
+- **Spoken rain warnings** — a ride-start weather briefing and a "rain on
+  your route in about N minutes" callout, with a rider-adjustable lead time.
+- **Android Auto** (early / in development) — the navigation map, route and
+  radar on the car screen, mirrored from the phone.
+
+No accounts, no ads, no analytics, no tracking — see the privacy policy.
 
 DryLine is **advisory only**. Forecasts are probabilistic: the app says
 "expected" and "may", and means it. Ride by the sky and the road.

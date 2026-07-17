@@ -4,12 +4,12 @@ title: Privacy Policy
 
 # DryLine — Privacy Policy
 
-_Last updated: 15 July 2026_
+_Last updated: 17 July 2026_
 
-DryLine is an Android app that overlays rain radar on a map and warns
-motorcycle riders when rain is likely on their route. **It has no user
-accounts, no ads, no analytics, and no backend server.** There is no server of
-ours for your data to go to.
+DryLine is an Android app that overlays rain radar on a map, navigates your
+own GPX route, and warns motorcycle riders when rain is likely on their
+route. **It has no user accounts, no ads, no analytics, and no backend
+server.** There is no server of ours for your data to go to.
 
 ## Data DryLine collects about you
 
@@ -43,6 +43,15 @@ an account:
 These requests reveal the geographic area you are viewing, as any map or
 weather app must. They carry no identifier, no account, and no profile. Their
 own handling of requests is governed by their respective privacy terms.
+
+## Voice guidance and Android Auto
+
+Voice guidance is spoken by **your phone's own text-to-speech engine** (a
+system service). DryLine hands it only the instruction text — for example
+"Turn left in 300 meters" or "Light rain on your route in about 10 minutes" —
+never your position. On **Android Auto**, DryLine projects the same
+navigation and weather view to the car screen; this adds no data collection
+and no new network services.
 
 ## Backups
 
