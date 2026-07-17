@@ -29,7 +29,12 @@ DryLine is **advisory only**. Forecasts are probabilistic: the app says
 
 ## Documents
 
-- [Privacy Policy](privacy.md)
+- [User Guide](guide.md) — the app, tab by tab: map, routes, navigation,
+  ride mode, settings.
+- [Ride Simulation](simulation.md) — test builds can replay a route from the
+  couch, against live weather.
+- [How DryLine handles your data](data.md) — the plain-words fact sheet.
+- [Privacy Policy](privacy.md) — the formal version of the same facts.
 
 ## Data sources
 

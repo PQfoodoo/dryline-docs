@@ -11,6 +11,9 @@ Published via GitHub Pages: <https://pqfoodoo.github.io/dryline-docs/>
 
 | Document | URL |
 |---|---|
+| User Guide | <https://pqfoodoo.github.io/dryline-docs/guide> |
+| Ride Simulation | <https://pqfoodoo.github.io/dryline-docs/simulation> |
+| Data fact sheet | <https://pqfoodoo.github.io/dryline-docs/data> |
 | Privacy Policy | <https://pqfoodoo.github.io/dryline-docs/privacy> |
 
 The source of truth for these documents is `docs/share/` in the private DryLine
