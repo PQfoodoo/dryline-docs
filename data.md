@@ -1,13 +1,20 @@
 ---
-title: How DryLine handles your data
+title: Data fact sheet
 ---
 
-# DryLine — what it does with your data
+# DryLine — fact sheet (what it does with your data)
 
-Written after security audits of the full source code, build and APK, plus a
-device-level check of the app's actual outbound connections. Short version:
-**your location never reaches the developer, and never reaches any cloud of
-ours — there is no "ours".**
+Written after security audits of the full source code, build and APK (V1:
+2026-07-09/10; V2 map migration: 2026-07-12; V2 navigation delta: 2026-07-13),
+plus a device-level check of the app's actual outbound connections
+(2026-07-14). Short version: **your location never reaches Pekka, and never
+reaches any cloud of ours — there is no "ours".**
+
+## What DryLine is
+
+An app that overlays rain radar on a map, predicts rain along an imported
+route, and — in ride mode — watches the nowcast around your GPS position and
+alerts you ~10-30 minutes before rain reaches you.
 
 ## Where your data goes
 
@@ -27,12 +34,13 @@ data (they can include your home). Uninstalling deletes everything.
 only servers the app ever talks to are `api.met.no` (forecast),
 `thredds.met.no` (radar images) and `tiles.openfreemap.org` (the map itself).
 This was verified on-device by inspecting the app's live connections — those
-three hosts and nothing else. The developer cannot see where you are, where
-you ride, or whether you use the app at all.
+three hosts and nothing else. Pekka cannot see where you are, where you ride,
+or whether you use the app at all.
 
-**No Google in the map.** The map is MapLibre drawing OpenStreetMap-based
-tiles from OpenFreeMap. Google Play services is not involved in rendering the
-map, and no API key is needed anywhere in the app.
+**No Google in the map.** V2 dropped the Google Maps SDK entirely (ADR-0003):
+the map is MapLibre drawing OpenStreetMap-based tiles from OpenFreeMap. Google
+Play services is no longer involved in rendering the map, and no API key is
+needed anywhere in the app.
 
 **Everything is encrypted in transit.** All three endpoints are HTTPS, the app
 contains no cleartext URLs, and it ships a network-security config that forbids
@@ -55,16 +63,20 @@ foreground-service permissions that the above require.)
 
 ## Weather sources and credit
 
-- Rain forecasts: MET Norway Nowcast 2.0 (NLOD / CC BY 4.0).
-- Radar images: MET Norway thredds (NLOD / CC BY 4.0).
+- Rain forecasts: Based on data from
+  [MET Norway](https://api.met.no/weatherapi/nowcast/2.0/documentation) —
+  Nowcast 2.0.
+- Radar images: Based on data from
+  [MET Norway](https://thredds.met.no/thredds/catalog/remotesensing/reflectivity-nordic/catalog.html) —
+  Nordic radar composite.
+- Weather-data licence:
+  [NLOD 2.0 / CC BY 4.0](https://www.met.no/en/free-meteorological-data/Licensing-and-crediting).
 - Map: OpenFreeMap / OpenMapTiles / © OpenStreetMap contributors.
-- Attribution is shown in the app under Settings → About, and behind the (i)
-  next to the MapLibre logo on the map.
+- Linked weather source/licence credits are under Settings → About. Map
+  credits are there too and behind the (i) next to the MapLibre logo.
 
 ## The disclaimer that matters
 
 DryLine is **advisory only**. Forecasts are probabilistic; the app says
 "expected" and "may" and means it. It is a decision aid for gearing up
 early — not a guarantee of dry roads. Ride by the sky and the road.
-
-See also the formal [privacy policy](privacy.md). Contact: <foodoo@iki.fi>

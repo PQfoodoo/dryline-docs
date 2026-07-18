@@ -30,8 +30,8 @@ gloves; the important stuff is big and high-contrast.
   alerts always stay visible.
 - **Banners** at the top tell you honestly when something is off: no
   GPS fix, no network, radar unavailable. No banner = everything live.
-- **Attribution**: the small (i) next to the MapLibre logo
-  (bottom-left) lists the map and weather data providers.
+- **Attribution**: the small (i) next to the MapLibre logo lists the map
+  providers. MET Norway weather credit is under **Settings → About**.
 
 ## Routes tab
 
@@ -160,7 +160,8 @@ helped — a known Android Auto quirk, not a DryLine setting.
 - **Night map style** — dark map for night rides (day style is the
   sunlight-readable default).
 - **Alert history** — the last 200 alerts, with a Clear button.
-- **About** — data sources, attribution, version.
+- **About** — linked weather data and licence credits, map attribution,
+  version, and a generated list of third-party software licences.
 
 ## Good to know
 
