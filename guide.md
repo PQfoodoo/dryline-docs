@@ -7,6 +7,11 @@ title: User Guide
 Three tabs: **Map**, **Routes**, **Settings**. Everything is sized for
 gloves; the important stuff is big and high-contrast.
 
+> **V2 note (2026-07-12):** the map is now OpenStreetMap-based
+> (OpenFreeMap) and the radar comes straight from MET Norway — same
+> features, slightly different look. Any screenshots floating around
+> from V1 show the old Google map; they'll be regenerated.
+
 ## Map tab
 
 - **Rain radar overlay** (☂ button): recent radar over the map. The
@@ -34,7 +39,11 @@ DryLine does not plan routes — plan in **stegra.io** (or anything that
 exports GPX), then:
 
 1. Export/download the route as a **GPX file** to your phone.
-2. Routes tab → import, pick the file.
+2. Get it into DryLine any of three ways: **tap the downloaded file**
+   and choose DryLine ("Open with"), **Share → DryLine** from any app,
+   or Routes tab → import and pick the file. All three land in the
+   same place; a file that isn't valid GPX is refused with an error —
+   it can't break anything.
 3. Tap the route: the Map colors it by expected rain **at the time
    you would be there** (departing now, ~80 km/h average). Purple =
    dry, blue = light rain, amber = moderate, red = heavy. **Gray
@@ -60,7 +69,7 @@ can color blue for later. The picture assumes you depart *now*; it
 refreshes with the radar while the map is open, so glance at it once
 more right before you actually set off.
 
-## Navigate — turn-by-turn along your route
+## Navigate — turn-by-turn along your route (V2)
 
 With a route shown on the map, tap the **🧭 button**:
 
@@ -69,10 +78,11 @@ With a route shown on the map, tap the **🧭 button**:
   tells you how far off you are and counts down as you ride back; the
   route never changes underneath you. The track is the truth.
 - Banners announce turns synthesized from the route shape ("Turn left
-  in 700 m"), with a "continue" reminder every ~2 km on straights.
-  Distances are always metric. Voice speaks each instruction ~300 m
-  out — the speaker button on the nav screen mutes it.
-- **The weather rides with you.** The nav map shows the live rain
+  in 700 m"), and between turns the banner counts one unbroken distance
+  down to the **next real turn** — "Turn right · 33 km" ticking down,
+  no filler steps. Distances are always metric. Voice speaks each
+  instruction ~300 m out — the speaker button on the nav screen mutes it.
+- **The weather rides with you (V2).** The nav map shows the live rain
   radar and your route colored by expected rain, the same as the Routes
   tab — you don't leave navigation to see what's coming. When rain sits
   on the track ahead, a card tells you how soon and how far: "Rain
@@ -109,6 +119,38 @@ Tap the **🏍 button** on the map when you start riding:
 - Tap the notification to open the map; stop the ride from the map
   button or the notification. **Remember to stop it** when you're done.
 
+## Android Auto — DryLine on the car screen
+
+Connect the phone to an Android Auto head unit and DryLine appears among
+the car's apps. Start navigation **on the phone** — the car mirrors it:
+
+- A course-up map with your route, the live rain radar, and the route
+  colored by expected rain — the same picture as the phone, built for a
+  glance.
+- The next turn rides on the map as a pill: **"Turn right · 1.5 km"**,
+  counting down to the real maneuver. When rain sits on your track, a
+  second pill appears under it: **"Rain in ~7 min"** with a severity
+  dot. Dry road and fresh radar = no pills besides the turn — nothing
+  to worry about is shown as nothing.
+- If the radar image gets old (no coverage, bad network), a **"Radar N
+  min old"** note appears instead of silently showing stale rain — the
+  same honesty rule as the phone.
+- A small next-turn readout also lives in the car's app rail, and rain
+  warnings pop up as car notifications.
+- **Off route?** The car keeps the map on you and shows "Off route" —
+  it never reroutes; the track is the truth. The phone shows how far
+  off you are as you ride back.
+- The phone stays in charge: voice, ride-mode alerts and the session
+  itself all run on the phone; the car is a second screen. Locking the
+  phone is fine.
+
+If DryLine doesn't show up in the car: make sure it was installed from
+Play (sideloaded builds are rejected by Android Auto), and check it
+isn't caught in a phone focus/digital-detox mode that suspends apps. If
+the car system's own turn card is missing while DryLine's pills work,
+setting the phone to 24-hour time and restarting Android Auto has
+helped — a known Android Auto quirk, not a DryLine setting.
+
 ## Settings tab
 
 - **Radar opacity** — how strongly radar paints over the map.
@@ -122,10 +164,8 @@ Tap the **🏍 button** on the map when you start riding:
 
 ## Good to know
 
-- No account, no cloud: everything stays on the phone — see
-  [how DryLine handles your data](data.md) and the
-  [privacy policy](privacy.md).
+- No account, no cloud: everything stays on the phone (see fact sheet).
 - The app is **advisory only** — it says "expected" and "may" because
   that is what a forecast is. Gear up on the alert, but ride by the sky.
-- Found a bug or a wrong forecast? Email <foodoo@iki.fi> with the time
-  it happened — the alert history helps reconstruct it.
+- Found a bug or a wrong forecast? Tell Pekka what time it happened —
+  the alert history helps reconstruct it.
