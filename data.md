@@ -69,6 +69,12 @@ foreground-service permissions that the above require.)
 - Radar images: Based on data from
   [MET Norway](https://thredds.met.no/thredds/catalog/remotesensing/reflectivity-nordic/catalog.html) —
   Nordic radar composite.
+- Coverage: the forecast answers only inside the Nordic radar composite
+  (roughly Finland, Sweden, Norway, Denmark). Outside it MET reports
+  "no coverage" and DryLine shows/speaks "no forecast" — never a dry
+  claim without data. The radar image may paint echoes slightly beyond
+  that edge (radar beams cross borders); that fringe is display only,
+  not a forecast.
 - Weather-data licence:
   [NLOD 2.0 / CC BY 4.0](https://www.met.no/en/free-meteorological-data/Licensing-and-crediting).
 - Map: OpenFreeMap / OpenMapTiles / © OpenStreetMap contributors.

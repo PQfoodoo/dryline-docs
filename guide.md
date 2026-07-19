@@ -163,6 +163,25 @@ helped — a known Android Auto quirk, not a DryLine setting.
 - **About** — linked weather data and licence credits, map attribution,
   version, and a generated list of third-party software licences.
 
+## Where DryLine works
+
+DryLine's rain forecast comes from the Nordic weather-radar network
+(MET Norway's nowcast), so the honest answer area is **the Nordics —
+Finland, Sweden, Norway and Denmark**. Outside that footprint there is no
+forecast data, and DryLine says so instead of guessing:
+
+- A route outside coverage shows **"No forecast for this route"** on the
+  timeline, and the spoken ride-start briefing says **"No rain forecast
+  is available for this route."** DryLine never claims "no rain" without
+  data behind the claim.
+- The **radar picture can reach a little farther than the forecast**:
+  radar beams don't stop at borders, so rain may be painted just beyond
+  the coverage edge — northern Estonia across the Gulf of Finland, for
+  example. Treat that fringe as a glimpse, not a forecast: at long range
+  radars both miss rain and exaggerate it.
+- Riding **into** coverage works: a route that starts outside the Nordics
+  but enters them gets real rain information for the covered part.
+
 ## Good to know
 
 - No account, no cloud: everything stays on the phone (see fact sheet).
