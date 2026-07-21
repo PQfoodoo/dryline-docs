@@ -23,6 +23,7 @@ alerts you ~10-30 minutes before rain reaches you.
 | Your GPS position | In memory while the app / ride mode runs — no track log is kept | Sent to **api.met.no** (Norwegian Meteorological Institute) to fetch the rain forecast for where you are, rounded to ~11 m precision — never more precise than the service needs. Nothing else receives your position. |
 | Alert history (time + place of each rain alert) | On the phone, newest 200, Settings → Clear history | No |
 | Imported routes (GPX) | On the phone until you delete them | No |
+| Road-data packs (speed limits per country) and the speed-limit segments computed from them | On the phone until you delete them in Settings; uninstalling deletes them | No — the matching of limits to your routes happens entirely on the phone. Downloading a pack (only when you tap Download in Settings → Road data) fetches from the project's hosting on GitHub, which sees your IP address and which country you chose — never your position or your routes. |
 | Settings | On the phone | No |
 | Crash log (technical stack traces, no location) | On the phone, 256 KB cap | No |
 
@@ -31,11 +32,14 @@ phone-to-phone transfer entirely, because routes and alert history are location
 data (they can include your home). Uninstalling deletes everything.
 
 **Telemetry: none.** No analytics, no crash reporting service, no backend. The
-only servers the app ever talks to are `api.met.no` (forecast),
+only servers the app talks to on its own are `api.met.no` (forecast),
 `thredds.met.no` (radar images) and `tiles.openfreemap.org` (the map itself).
 This was verified on-device by inspecting the app's live connections — those
-three hosts and nothing else. Pekka cannot see where you are, where you ride,
-or whether you use the app at all.
+three hosts and nothing else. One more host exists, reached **only on your
+explicit action**: tapping *Check for road data* or *Download* in
+Settings → Road data fetches speed-limit packs from `github.com` (the
+project's public hosting; audited 2026-07-21). Pekka cannot see where you
+are, where you ride, or whether you use the app at all.
 
 **No Google in the map.** V2 dropped the Google Maps SDK entirely (ADR-0003):
 the map is MapLibre drawing OpenStreetMap-based tiles from OpenFreeMap. Google
@@ -78,6 +82,10 @@ foreground-service permissions that the above require.)
 - Weather-data licence:
   [NLOD 2.0 / CC BY 4.0](https://www.met.no/en/free-meteorological-data/Licensing-and-crediting).
 - Map: OpenFreeMap / OpenMapTiles / © OpenStreetMap contributors.
+- Speed limits: extracted from OpenStreetMap — data © OpenStreetMap
+  contributors, [ODbL](https://opendatacommons.org/licenses/odbl/1-0/).
+  The packs themselves are open data under the same licence; their
+  [format is documented here](roadpack-format.md).
 - Linked weather source/licence credits are under Settings → About. Map
   credits are there too and behind the (i) next to the MapLibre logo.
 
