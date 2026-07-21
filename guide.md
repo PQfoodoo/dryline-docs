@@ -44,8 +44,17 @@ exports GPX), then:
    or Routes tab → import and pick the file. All three land in the
    same place; a file that isn't valid GPX is refused with an error —
    it can't break anything.
+   - A file holding **several routes** (a planner *collection* export)
+     imports as separate routes, names preserved.
+   - Files opened from **outside** the app (open-with, share) show a
+     **confirmation card** first — which file, which routes, how many
+     points — and nothing is saved until you tap Import. Cancel throws
+     it away. The in-app picker skips the card: you already chose the
+     file.
 3. Tap the route: the Map colors it by expected rain **at the time
-   you would be there** (departing now, ~80 km/h average). Purple =
+   you would be there** (departing now, paced by your **cruising
+   speed** — and by each road's real speed limit where road data is
+   installed, see below). Purple =
    dry, blue = light rain, amber = moderate, red = heavy. **Gray
    dashed = no forecast for that stretch** — it's beyond the ~2 h
    horizon, or a spot the forecast service can't see. Unknown is never
@@ -68,6 +77,38 @@ behind the rain. The reverse also happens: a road that looks clear now
 can color blue for later. The picture assumes you depart *now*; it
 refreshes with the radar while the map is open, so glance at it once
 more right before you actually set off.
+
+## Road data — real speed limits for honest timing
+
+Rain timing is only as good as knowing *when* you reach each stretch of
+road. Out of the box, every route is timed at one flat cruising speed;
+**road data packs** make that honest per road:
+
+- **Settings → Road data → Check for road data**, then download your
+  country — Finland 67 MB, Sweden 75 MB, Norway 66 MB, Denmark 31 MB.
+  One-time download (Wi-Fi recommended), refreshed quarterly.
+- From then on, imported routes get their **speed limits matched
+  automatically, entirely on your phone**. The Routes list shows how
+  much of each route is covered — "97 % signed limits · 2 % estimated".
+  Signed and estimated are never merged into one number: a signed limit
+  came from the map data, an estimated one is only the road type's
+  national default.
+- ETAs and rain timing then pace each stretch at the **lower of the
+  road's limit and your cruising speed** — the village at 30, the
+  motorway at your pace, instead of one average for both. Stretches
+  with no data stay at your cruising speed, exactly as before.
+- **Cruising speed** (Settings, default 100 km/h) is your open-road
+  pace — what you actually ride where the road allows. Set it honestly;
+  the app never times you *faster* than a road's limit, but it takes
+  your word for the open road.
+- Everything works **offline** once downloaded, and nothing about your
+  routes ever leaves the phone — the matching is local; downloading
+  only tells the host which country you fetched. Deleting a pack in
+  Settings (or uninstalling the app) removes the data.
+- Speed limits come from **OpenStreetMap** (© OpenStreetMap
+  contributors, [ODbL](https://www.openstreetmap.org/copyright)).
+  As everywhere in DryLine: advisory only — **road signs always take
+  precedence**.
 
 ## Navigate — turn-by-turn along your route (V2)
 
@@ -93,6 +134,10 @@ With a route shown on the map, tap the **🧭 button**:
   starts, and a spoken "rain on your route in about N minutes" callout
   as rain approaches — with a rider-adjustable lead time. The same
   speaker button mutes all voice.
+- **Offline is said out loud, not left silent.** With no connection, a
+  red **"Offline — rain warnings unavailable"** chip shows under the
+  rain-card slot and the start briefing says "You are offline" — because
+  silence at ride start must never read as "no rain coming".
 - Starting navigation also starts **ride mode**: rain alerts and the
   persistent notification run through your whole navigation session.
   Exiting navigation keeps ride mode on — stop it with the 🏍 button
@@ -157,11 +202,18 @@ helped — a known Android Auto quirk, not a DryLine setting.
 - **Alert threshold** — what counts as rain worth an alert: drizzle /
   light (default) / moderate. Changes apply from the next check, even
   mid-ride.
+- **Cruising speed** — your open-road pace (default 100 km/h). Every
+  ETA and rain estimate paces from it, capped by real speed limits
+  where road data is installed.
+- **Road data** — download country speed-limit packs, see what is
+  installed and how fresh it is, delete packs. See the road-data
+  section above.
 - **Night map style** — dark map for night rides (day style is the
   sunlight-readable default).
 - **Alert history** — the last 200 alerts, with a Clear button.
-- **About** — linked weather data and licence credits, map attribution,
-  version, and a generated list of third-party software licences.
+- **About** — linked weather data and licence credits, map and
+  speed-limit attribution, version, and a generated list of third-party
+  software licences.
 
 ## Where DryLine works
 
